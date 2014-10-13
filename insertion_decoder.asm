@@ -29,9 +29,9 @@ decoder:
  
 move_memory:
 	mov dl, byte[rsi + rbx]
-	mov byte [rsi], dl	;create movement in memory
+	mov byte [rsi], dl	        ;create movement in memory
 	loop decoder
-jmp short shellcodeEncoded	;jumps to the shellcode decoded
+        jmp short shellcodeEncoded	;jumps to the shellcode decoded
 
 shellcode:
 	call code
