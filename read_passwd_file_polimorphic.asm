@@ -1,7 +1,7 @@
 ; BITS 64
 ; Author Javier Tejedor (Polimorphic version of RingZer0 Team: http://shell-storm.org/shellcode/files/shellcode-878.php) 
 ; Read /etc/passwd Linux x86_64 Shellcode
-; Shellcode size 73 bytes
+; Shellcode size 71 bytes
 ; Date 17/10/2014
 
 global _start
@@ -45,8 +45,6 @@ mov rax, rdi
 syscall
   
 ; syscall exit
-;push 60
-;pop rax
-xor rax, rax
-add al, 60
+push 0x3c
+pop rax
 syscall
